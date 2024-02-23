@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/create.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <title>Motormentor - Accounts</title>
+</head>
+
+<body>
+  <img src="../static/img/Motormentor.jpg" width="450" alt="">
+  <div class="container">
+    <h1 class="label">Create account</h1>
+    <form class="login_form" method="post" name="form">
+
+      <div class="d">
+        <input type="email" class="inp" id="email" name="email" placeholder="Enter email" required>
+      </div>
+
+      <div class="d">
+        <input id="password" class="inp" type="password" name="password" placeholder="Enter password" required>
+      </div>
+
+      <div class="d">
+        <input type="password" class="inp" id="Cpass" name="Cpassword" placeholder="Confirm password" required>
+      </div>
+
+      <div class="d">
+        <input type="phone" id="phone" class="inp" name="phone" placeholder="Enter phone.no" required>
+      </div>
+
+      <div class="d">
+        <button type="submit" onclick="create()">Create account</button>
+      </div>
+
+      <div class="d">
+        <p>Login into your account : <a href="/login">Login</a></p>
+      </div>
+      
+
+    </form>
+  </div>
+</body>
+
+</html>
