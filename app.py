@@ -23,8 +23,8 @@ async def root(request:Request):
 @app.post('/authenticate')
 async def login(request:Request,email:str = Form(...),password:str = Form(...)):
 
-    valid = collection.find_one({"email":email},{'_id':0})
-    if(valid["password"]==password):
+    user_data = collection.find_one({"email":email},{'_id':0})
+    if(user_data["password"]==password):
         return templates.TemplateResponse("index.html",{"request":request})
     else:
         return ({"data":"not found"})
