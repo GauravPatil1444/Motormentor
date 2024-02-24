@@ -8,6 +8,10 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
+conn = pymongo.MongoClient("mongodb://localhost:27017/")
+db = conn['Motormentor']
+collection = db['user_data']
+
 @app.get('/')
 async def root(request:Request):
     return templates.TemplateResponse("index.html",{"request":request})
@@ -18,9 +22,6 @@ async def root(request:Request):
 
 @app.post('/authenticate')
 async def login(request:Request,email:str = Form(...),password:str = Form(...)):
-    conn = pymongo.MongoClient("mongodb://localhost:27017/")
-    db = conn['Motormentor']
-    collection = db['user_data']
 
     valid = collection.find_one({"email":email},{'_id':0})
     if(valid["password"]==password):
@@ -30,9 +31,7 @@ async def login(request:Request,email:str = Form(...),password:str = Form(...)):
 
 @app.post('/submit_data')
 async def create(request:Request,email:str = Form(...),password:str = Form(...),phone:int = Form(...)):
-    conn = pymongo.MongoClient("mongodb://localhost:27017/")
-    db = conn['Motormentor']
-    collection = db['user_data']
+    
     data = {
         "email":email,
         "password":password,
