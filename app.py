@@ -32,12 +32,12 @@ async def login(request:Request,email:str = Form(...),password:str = Form(...)):
 @app.post('/submit_data')
 async def create(request:Request,email:str = Form(...),password:str = Form(...),phone:int = Form(...)):
     
-    data = {
+    form_data = {
         "email":email,
         "password":password,
         "phone":phone
     }
-    collection.insert_one(data)
+    collection.insert_one(form_data)
     return templates.TemplateResponse("index.html",{"request":request})
 
 
