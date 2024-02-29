@@ -44,5 +44,16 @@ async def create(request:Request,email:str = Form(...),password:str = Form(...),
 @app.get('/create_account')
 async def create(request:Request):
     return templates.TemplateResponse("create.html",{"request":request})
+
+@app.get('/sell_car')
+async def create(request:Request):
+    return templates.TemplateResponse("sell_car.html",{"request":request})
     
-   
+@app.get('/profile')
+async def create(request:Request):
+    return templates.TemplateResponse("profile.html",{"request":request})
+
+@app.get('/contact')
+async def create(request:Request):
+    return templates.TemplateResponse("contact.html",{"request":request})
+
