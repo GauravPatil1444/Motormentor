@@ -16,12 +16,13 @@ body{
     flex-direction: column;
     text-align: center;
     align-items: center;
+    justify-content: center;
 }
 #navbar{
     position: fixed;
     top: 0%;
     display: flex;
-    width: 100%;
+    width: 100vw;
     height: 55px;
     text-align: center;
     background-color: var(--dblue);
@@ -55,17 +56,17 @@ body{
     border: 2px solid var(--red);
     border-radius: 20px;
 }
-#homebtn{
+#sell_carbtn{
     background-color: transparent;
     border: 2px solid var(--red);
 }
-#homebtn a{
+#sell_carbtn a{
     color: var(--awhite);
 }
-#homebtn:hover{
+#sell_carbtn:hover{
     background-color: var(--red);
 }
-#homebtn:hover a{
+#sell_carbtn:hover a{
     color: var(--dblue);
 }
 .Logo{
@@ -90,53 +91,6 @@ body{
     display: flex;
     align-items: center;
 }
-#chat-window{
-    margin-top: 1%;
-    width: 60vw;
-    height: 65vh;
-    border: 2px solid var(--red);
-    border-radius: 12px;
-    background-color: rgba(0, 0, 0, 0.266);
-    display: flex   ;
-    text-align: center;
-    flex-direction: column;
-    justify-content: center;
-}
-#chat-container{
-    height: 80%;
-    width: 100%;
-    display: flex;
-    flex-direction: column-reverse;
-    font-size: x-large;
-    /* background-color: var(--awhite); */
-    color: var(--awhite);
-    overflow-y: auto;
-}
-#chat-input{
-    background-color: rgba(0, 0, 0, 0.375);
-    height: 35px;
-    width: 80%;
-    outline: none;
-    border: 2px solid var(--red);
-    border-radius: 10px 0px 0px 10px;
-    color: var(--awhite);
-    font-size: large;
-    border-right: none;
-}
-#input-section{
-    /* background-color: var(--awhite); */
-    margin-top: 2%;
-    display: flex;
-    justify-content: center;
-}
-#input-section button{
-    border: 2px solid var(--red);
-    background-color: var(--red);
-    border-radius: 0px 10px 10px 0px;
-    height: 100%;
-    width: 50px;
-    cursor: pointer;
-}
 .heading{
     display: flex;
     flex-direction: row;
@@ -144,7 +98,6 @@ body{
     font-size: 50px;
     color: var(--red);
     overflow-x: scroll;
-    align-items: center;
 }
 .heading div{
     animation: slide 8s infinite;
@@ -152,16 +105,94 @@ body{
   }
   @keyframes slide{
     0%{
-        transform: translateX(550px);
+        transform: translateX(800px);
     }
     100%{
-        transform: translateX(-600px); 
+        transform: translateX(-800px); 
     }
   }
+
+.container{
+    border: 2px solid var(--red);
+    border-radius: 12px;
+    width: 60vw;
+    padding: 35px;
+    margin-top: 2%;
+}
+input{
+    text-align: center;
+    font-size: large;
+    width: fit-content;
+    margin: 25px;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 2px solid #f5deb3;
+    color: #f5deb3;
+  }
+label{
+    color: var(--awhite);
+    font-size: larger;
+}
+.selectors option{
+    outline: none;
+    border: none;
+    background-color: var(--awhite);
+    color: var(--dblue);
+}
+select{
+    font-size: large;
+    background-color: transparent;
+    color: var(--awhite);
+    outline: none;
+    border: none;
+}
+select option{
+    font-size: larger;
+}
+.selectors{
+    margin-right: 25px;
+}
+.btn{
+    margin-top: 2%;
+    font-size: larger;
+    font-weight: bold;
+    color: var(--dblue);
+    border: 2px solid var(--red);
+    width: 10vw;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: var(--red);
+    transition: all 0.3s ease-in-out;
+}
+.btn:hover{
+    background-color: transparent;
+    color: var(--awhite);
+    border-radius: 25px;
+}
+.headline{
+    position: absolute;
+    left: 45vw;
+    top: 10px;
+    padding: 5px;
+}
+   
+.headline div{
+    display: block;
+    display: flex;
+    flex-direction: row;
+    height: 55px;
+    overflow-y: hidden;
+    color: var(--awhite);
+    font-size: x-large;
+    width: 15vw;
+    overflow-x: scroll;
+    display: none;
+}
+.headline p{
+    white-space:nowrap;
+    font-size: x-large;
+}
 #contactbtn{
     width: fit-content;
-}
-#navbar div{
-    font-size: x-small;
-    margin-right: 1.2%;
 }

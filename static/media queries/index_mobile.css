@@ -1,0 +1,40 @@
+@media only screen and (max-width:460px){
+    body{
+        overflow-y: scroll;
+        height: 200vh;
+    }
+    #navbar{
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+    }
+    .Logo{
+        display: none;
+    }
+    .heading{
+        margin-top: 12vh;
+        width: 95vw;
+        font-size: xx-large;
+        display: flex;
+        justify-content: center;
+    }
+    .heading div{
+        animation: slide 8s infinite;
+        animation-timing-function: linear;
+    }
+    @keyframes slide{
+        0%{
+            transform: translateX(380px);
+        }
+        100%{
+            transform: translateX(-320px); 
+        }
+      }
+    .heading img{
+        width: 212px;
+        height: 30px;
+    }
+    #chat-window{
+        width: 90vw;
+    }
+}

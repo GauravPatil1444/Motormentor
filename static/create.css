@@ -1,24 +1,101 @@
 *{
   font-family: 'Roboto Condensed';
-  color: #f5deb3;
+  margin: 0%;
+}
+:root{
+  --awhite : #f5deb3;
+  --dblue : #0f3057;
+  --red : #EC3D5A;
 }
 body {
-  background-color:#0f3057;
+  background-color: var(--dblue);
   text-align: center;
+}
+#navbar{
+  position: fixed;
+  top: 0%;
+  display: flex;
+  width: 100vw;
+  height: 60px;
+  text-align: center;
+  background-color: var(--dblue);
+  box-shadow: 0px 5px 35px 0.1px var(--red);
+  flex-direction: row-reverse;
+}
+.nav-components{
+  margin: 10px;
+  width: 55px;
+  padding: 8px;
+  height: fit-content;
+  text-align: center;
+  background-color: var(--red);
+  border: 2px solid var(--red);
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out ;
+  margin-right: 20px;
+}
+.nav-components a{
+  text-decoration: none;
+  color: var(--dblue);
+  font-weight: bold;
+  font-size: large;
+}
+.nav-components:hover a{
+  color: var(--awhite);
+}
+.nav-components:hover{
+  background-color: transparent;
+  text-align: center;
+  border: 2px solid var(--red);
+  border-radius: 20px;
+}
+#homebtn{
+  background-color: transparent;
+  border: 2px solid var(--red);
+}
+#homebtn a{
+  color: var(--awhite);
+}
+#homebtn:hover{
+  background-color: var(--red);
+}
+#homebtn:hover a{
+  color: var(--dblue);
+}
+.Logo{
+  position: absolute;
+  left: 0%;
+}
+.profile{
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.profile button{
+  height: fit-content;
+  width: fit-content;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 img {
   margin-top: 6%;
 }
 
 .container {
-  color: #f5deb3;
+  color: var(--awhite);
   text-align: center;
   width: 40%;
   font-size: large;
   margin: auto;
   margin-top: 1%;
-  background-color: #0f3057;
-  border: 2px solid #EC3D5A;
+  background-color: var(--dblue);
+  border: 2px solid var(--red);
   border-radius: 18px;
 }
 
@@ -33,20 +110,30 @@ input {
   border: none;
   outline: none;
   background: transparent;
-  border-bottom: 2px solid #f5deb3;
+  border-bottom: 2px solid var(--awhite);
 }
 
 button {
-  width: 40%;
+  width: fit-content;
   padding: 10px;
   border-radius: 10px;
-  background-color: #EC3D5A;
-  color: #f5deb3;
+  background-color: var(--red);
+  color: var(--awhite);
   font-size: larger;
   cursor: pointer;
+  border: 2px solid var(--red);
+  transition: all 0.3s ease-in-out;
+}
+button:hover{
+  background-color: transparent;
+  color: var(--awhite);
+  border-radius: 25px;
+}
+#contactbtn{
+  width: fit-content;
 }
 a{
   text-decoration: none;
   font-weight: bold;
-  color: #EC3D5A;
+  color: var(--red);
 }

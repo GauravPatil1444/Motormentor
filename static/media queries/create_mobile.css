@@ -1,0 +1,38 @@
+@media only screen and (max-width:460px) {
+    body{
+        overflow-y: scroll;
+        height: 150vh;
+    }
+    .Motormentor_img{
+        margin-top: 25%;
+        width: 85vw;
+    }
+    .container{
+        width: 80vw !important;
+    }
+    input{
+        width: 60vw;
+    }
+    .d{
+        display: flex;
+        justify-content: center;
+    }
+    .d p{
+        margin: 0%;
+        text-align: center;
+        width: 55vw;
+        font-size: small;
+    }
+    .Logo{
+        display: none;
+    }
+    .profile img{
+        width: fit-content;
+    }
+    #navbar div{
+        font-size: x-small;
+        margin-right: 1.2%;
+    }
+
+ }
+ 
