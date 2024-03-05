@@ -196,3 +196,18 @@ select option{
 #contactbtn{
     width: fit-content;
 }
+#prediction {
+    margin-top: 2%;
+    display: none;
+    color: var(--awhite);
+    font-size: larger;
+}
+#contact{
+    color: var(--awhite);
+    margin-top: 2%;
+    width: 100%;
+    display: none;
+}
+#amount{
+    display: none;
+}

@@ -9,6 +9,10 @@ uvicorn = "*"
 pymongo = "*"
 jinja2 = "*"
 python-multipart = "*"
+joblib = "*"
+scikit-learn = "*"
+pandas = "*"
+websockets = "*"
 
 [dev-packages]
 

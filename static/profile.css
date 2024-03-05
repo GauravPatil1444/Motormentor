@@ -52,19 +52,6 @@ body{
     border: 2px solid var(--red);
     border-radius: 20px;
 }
-#homebtn{
-    background-color: transparent;
-    border: 2px solid var(--red);
-}
-#homebtn a{
-    color: var(--awhite);
-}
-#homebtn:hover{
-    background-color: var(--red);
-}
-#homebtn:hover a{
-    color: var(--dblue);
-}
 .Logo{
     margin-top: 10px;
     position: absolute;
@@ -75,6 +62,7 @@ body{
     display: flex;
     align-items: center;
     margin-right: 20px;
+    background-color: transparent;
 }
 .profile button{
     height: fit-content;
@@ -82,7 +70,7 @@ body{
     border-radius: 50%;
     outline: none;
     border: none;
-    background-color: var(--dblue);
+    background-color: transparent;
     cursor: pointer;
     display: flex;
     align-items: center;

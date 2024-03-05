@@ -22,13 +22,13 @@
     </div>
     <div class="heading"><div>Get your car price -<img src="../static/img/Motormentor.png" alt="couldn't load !" height="50"></div></div>
     <div class="container">
-    <form action="/car_details" method="get">
-        <span class="inp"><input type="text" placeholder="Car name"></span>
-        <span class="inp"><input type="number" placeholder="Kilometers_driven"></span>
-        <span class="inp"><input type="number" placeholder="Mileage km/l"></span>
-        <span class="inp"><input type="number" placeholder="Engine CC"></span>
-        <span class="inp"><input type="number" placeholder="Power bhp"></span>
-        <span class="inp"><input type="number" placeholder="Year"></span><br>
+    <form id="car_details" onsubmit="sendMessage(event)" >
+        <span class="inp" id="car_name"><input name="car_name" type="text" placeholder="Car name"></span>
+        <span class="inp"><input name="kmdriven" type="number" placeholder="Kilometers driven"></span>
+        <span class="inp"><input name="mileage" type="number" placeholder="Mileage km/l"></span>
+        <span class="inp"><input name="engine" type="number" placeholder="Engine CC"></span>
+        <span class="inp"><input name="power" type="number" placeholder="Power bhp"></span>
+        <span class="inp"><input name="year" type="number" placeholder="Year"></span><br>
         <label for="Seats">No. of seats : </label>
         <span class="inp"><select name="Seats" class="selectors">
             <option value="2">2</option>
@@ -60,7 +60,9 @@
             <option value="Third">Third</option>
             <option value="Fourth">Fourth</option>
         </select></span><br>
-        <button class="btn" type="submit">Predict Price</button>
+        <button class="btn">Predict Price</button>
+        <div id="prediction"><span id="amount"></span></div>
+        <div id="contact">The price is an aproximate estimation, if you want to sell your car please contact us</div>
     </form>
     </div>
 </body>
