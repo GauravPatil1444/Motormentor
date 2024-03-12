@@ -19,4 +19,8 @@
     #navbar{
         justify-content: center;
     }
+    #navbar div{
+        font-size: x-small;
+        margin-right: 1.2%;
+    }
 }

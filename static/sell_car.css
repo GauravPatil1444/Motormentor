@@ -115,7 +115,7 @@ body{
 .container{
     border: 2px solid var(--red);
     border-radius: 12px;
-    width: 60vw;
+    width: 70vw;
     padding: 35px;
     margin-top: 2%;
 }
