@@ -13,6 +13,9 @@ joblib = "*"
 scikit-learn = "*"
 pandas = "*"
 websockets = "*"
+flask = "*"
+spacy = "*"
+en-core-web-sm = {file = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.1.0/en_core_web_sm-3.1.0.tar.gz"}
 
 [dev-packages]
 
