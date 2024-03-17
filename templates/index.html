@@ -1,31 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/index.css">
-    <link rel="stylesheet" href="../static/media queries/index_mobile.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/index.css" />
+    <link rel="stylesheet" href="../static/media queries/index_mobile.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet" />
     <script src="../static/js/index.js"></script>
     <title>Motormentor - Home</title>
 </head>
+
 <body>
     <div id="navbar">
-        <div class="profile"><button onclick="profileclk()"><img src="../static/img/profile-user.png" alt="couldn't load" height="40"></button></div>
-        <div class="nav-components" id="contactbtn"><a class="anchors" href="/contact">Contact us</a></div>
-        <div class="nav-components" id="sell_carbtn"><a href="/sell_car">Sell car</a></div>
-        <div class="nav-components" id="homebtn"><a class="anchors" href="/">Home</a></div>
-        <div class="Logo"><img src="../static/img/Motormentor.png" alt="Logo couldn't loaded" height="35" ></div>
-    </div>
-    <div class="heading"><div>Message -<img src="../static/img/Motormentor.png" alt="couldn't loaded" height="45"></div></div>
-    <div id="chat-window">
-        <div id="chat-container">
-            <div class="message">This is a message 2</div>
-            <div class="message">This is a message 1</div>
+        <div class="profile">
+            <button onclick="profileclk()">
+                <img src="../static/img/profile-user.png" alt="couldn't load" height="40" />
+            </button>
         </div>
-        <div id="input-section"><input type="text" id="chat-input" name="chat-input" placeholder="Enter the query"><button onclick="send()"><img src="../static/img/send_message.png" alt=" ! " height="25"></button></div>
+        <div class="nav-components" id="contactbtn">
+            <a class="anchors" href="/contact">Contact us</a>
+        </div>
+        <div class="nav-components" id="sell_carbtn">
+            <a href="/sell_car">Sell car</a>
+        </div>
+        <div class="nav-components" id="homebtn">
+            <a class="anchors" href="/">Home</a>
+        </div>
+        <div class="Logo">
+            <img src="../static/img/Motormentor.png" alt="Logo couldn't loaded" height="35" />
+        </div>
+    </div>
+    <div class="heading">
+        <div>
+            Message -<img src="../static/img/Motormentor.png" alt="couldn't loaded" height="45" />
+        </div>
+    </div>
+    <div id="chat-window">
+        <div id="chat-container"></div>
+        <div id="input-section">
+            <input type="text" id="chat-input" name="chat-input" placeholder="Enter the query" /><button
+                onclick="send()">
+                <img src="../static/img/send_message.png" alt=" ! " height="25" />
+            </button>
+        </div>
+    </div>
+    <div id="content">
+        <h3 id="Loading" style="display: none">Loading data...</h3>
+        <div id="carname"></div>
+        <div id="img"></div>
+        <div id="price"></div>
+        <div id="verdict"></div>
+        <div id="variants"></div>
+        <div id="specs"></div>
+        <div id="features"></div>
+        <div id="mileage"></div>
+        <div id="summary"></div>
     </div>
 </body>
+
 </html>
