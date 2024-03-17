@@ -177,6 +177,7 @@ body{
     align-items: center;
     overflow-y: scroll;
     color: var(--awhite);
+    display: none;
 }
 .o-fzptVd, X8wyAH{
     display: none;
@@ -193,6 +194,7 @@ body{
 .o-bCRRBE, o-bfyaNx, o-bTcQuC, W3A1MZ, o-YCHtV{
     border: 2px solid var(--red);
     border-radius: 10px;
+    width: fit-content;
 }
 .o-bqHweY, o-bVSleT, o-bwCunT, o-bfyaNx, o-bNxxEB{
     margin: 15px;
@@ -202,9 +204,14 @@ body{
     font-size: large;
     font-weight: normal;
 }
+#Loading{
+    color: var(--awhite);
+}
 #img img{
     border: 4px solid var(--red);
     border-radius: 10px;
+    width: 95%;
+    height: auto;
 }
 #carname{
     margin-top: 15px;
@@ -219,12 +226,23 @@ body{
     font-size: large;
 }
 #variants{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     margin-top: 10px;
     font-size: large;
 }
 #specs{
     margin-top: 10px;
     font-size: large;
+    text-align: center;
+}
+#specs h3{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
 }
 #features{
     margin-top: 10px;
@@ -236,11 +254,19 @@ body{
 #summary{
     margin-top: 10px;
     font-size: large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 #summary li{
     list-style: none;
 }
 #mileage{
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;   
     font-size: large;
 }

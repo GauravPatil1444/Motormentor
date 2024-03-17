@@ -20,6 +20,7 @@ let send = ()=>{
       xhr1.setRequestHeader('Content-Type', 'application/json');
       xhr1.onload=()=>{
         document.getElementById("Loading").style.display = "none";
+        document.getElementById("content").style.display = "block";
         console.log(xhr1.responseText)
         try {
           data = JSON.parse(xhr1.responseText);

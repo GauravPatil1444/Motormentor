@@ -1,7 +1,7 @@
 @media only screen and (max-width:460px){
     body{
         overflow-y: scroll;
-        height: 200vh;
+        height: fit-content;
     }
     #navbar{
         width: 100vw;
@@ -36,5 +36,12 @@
     }
     #chat-window{
         width: 90vw;
+    }
+    #content{
+        width: 95vw;
+    }
+    #img img{
+        width: 95% !important;
+        height: auto;
     }
 }
