@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
-from model.preprocess import preprocess
 from model.model import prediction
+from model.scrape import scrape as scrape_car_data 
 import pymongo
 # import json
 
@@ -17,18 +17,18 @@ def root():
 def login():
     return render_template('login.html')
 
-@app.route('/authenticate',methods=['GET'])
+@app.route('/authenticate',methods=['POST'])
 def auth():
     email = request.form.get('email')
     password = request.form.get('password')
     user_data = collection.find_one({"email":email},{'_id':0})
     if(user_data["password"]==password):
-        return render_template('/templates/index.html')
+        return render_template('index.html')
     else:
         return ({"data":"not found"})
 
 @app.route('/submit_data',methods=['POST'])
-async def submit():
+def submit():
     email = request.form.get('email')
     password = request.form.get('password')
     phone = request.form.get('phone')
@@ -105,12 +105,11 @@ def get_price():
         return f"Rs. {res} Lakh"
     except Exception as e:
         return f"An error occurred: {e}"
-        
-@app.route('/message')
-def car_data():
+    
+@app.route('/scrape',methods=['POST'])
+def scrape_data():
     data = request.json
-    data = data.get('message','')
-    return preprocess(data)
+    return scrape_car_data(data)
 
 if __name__ == "__main__":
     app.run(debug=True)

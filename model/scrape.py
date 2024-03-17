@@ -3,6 +3,11 @@ import urllib.request
 import json
 
 def scrape(data):
+    data = data['data']
+    data = data.split()
+    print(data)
+    if data[0]=='maruti'or data[0]=='Maruti':
+        data[0] = "maruti-suzuki"
     try:
         if len(data)==2:
             url = f'https://www.carwale.com/{data[0]}-cars/{data[1]}/'
@@ -21,8 +26,10 @@ def scrape(data):
             mileage = soup.find(class_='o-bCRRBE o-bfyaNx o-bTcQuC W3A1MZ undefined o-YCHtV')
             summary = soup.find(class_='o-bfyaNx o-bNxxEB o-bqHweY')
 
-            data = {'carname':str(carname),'img':img['src'],'specs':str(specs),'price':str(price),'features':str(features),'mileage':str(mileage),'verdict':str(verdict),'variants':str(variants),'summary':str(summary)}
-            return json.dumps(data)    
+            data = {'carname':str(carname),'img':img['src'],'specs':str(specs),'price':str(price),'features':str(features),'mileage':str(mileage),'verdict':str(verdict),'variants':str(variants),'summary':str(summary)}    
+            return json.dumps(data)
+        else:
+            return json.dumps({'error': 'Invalid data format'})
     except Exception as e:
-        return str(e)
+        return json.dumps({'error': str(e)})
 
