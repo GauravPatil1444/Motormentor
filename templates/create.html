@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../static/create.css">
+  <script src="../static/js/create.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
@@ -16,7 +17,7 @@
   <img src="../static/img/Motormentor.jpg" width="450" alt="">
   <div class="container">
     <h1 class="label">Create account</h1>
-    <form class="login_form" method="post" name="form">
+    <form id="create_form" method="post" name="form">
 
       <div class="d">
         <input type="email" class="inp" id="email" name="email" placeholder="Enter email" required>
@@ -35,7 +36,7 @@
       </div>
 
       <div class="d">
-        <button type="submit" onclick="create()">Create account</button>
+        <button type="button" onclick="validate()">Create account</button>
       </div>
 
       <div class="d">

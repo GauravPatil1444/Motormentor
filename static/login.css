@@ -43,6 +43,7 @@ button {
   padding: 10px;
   border-radius: 10px;
   background-color: #EC3D5A;
+  border: 2px solid #EC3D5A;
   color: #f5deb3;
   font-size: larger;
   cursor: pointer;
