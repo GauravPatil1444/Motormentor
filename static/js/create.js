@@ -24,12 +24,9 @@ let validate = () => {
       alert("Phone.no length must be atleast 10 numbers");
     }
 
-    if (status == 0) {
-      console.log(200);
-      document.form.action = "/submit_data";
-    }
-    else{
-      document.getElementById('create_form').method = "get";
+    if (status == 1) {
+      document.getElementById("create_form").method = "get";
+      document.form.action = "/create_account";
       console.log("Data not submitted");
     }
 }

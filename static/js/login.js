@@ -22,6 +22,7 @@ let validate = () => {
         if(data['status']==1){
           sessionStorage.setItem('email',data['email']);
           sessionStorage.setItem('status',data['status']);
+          sessionStorage.setItem('name',data['name']);
           window.location.href = "/";
         }
         else{

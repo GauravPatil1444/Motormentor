@@ -17,7 +17,7 @@
   <img src="../static/img/Motormentor.jpg" width="450" alt="">
   <div class="container">
     <h1 class="label">Create account</h1>
-    <form id="create_form" method="post" name="form">
+    <form action="/submit_data" id="create_form" method="post" name="form">
       
       <div class="d">
         <input type="text" class="inp" id="name" name="name" placeholder="Enter name" required>
@@ -40,7 +40,7 @@
       </div>
 
       <div class="d">
-        <button type="button" onclick="validate()">Create account</button>
+        <button type="submit" onclick="validate()">Create account</button>
       </div>
 
       <div class="d">

@@ -20,21 +20,20 @@ def auth():
     password = request.form.get('password')
     user_data = collection.find_one({"email":email},{'_id':0})
     if(user_data and user_data["password"]==password):
-        data  = {'status':1,'email':email}
+        data  = {'status':1,'email':email,'name':user_data["name"]}
         return jsonify(data)
     else:
         data = {"status":0}
         return jsonify(data)
 
 @app.route('/submit_data',methods=['POST'])
-def submit():
-    print(200)  
-    # name = request.form.get('name')
+def submit(): 
+    name = request.form.get('name')
     email = request.form.get('email')
     password = request.form.get('password')
     phone = request.form.get('phone')
     form_data = {
-        # "name":name,
+        "name":name,
         "email":email,
         "password":password,
         "phone":phone
