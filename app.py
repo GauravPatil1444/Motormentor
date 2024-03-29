@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+from model.model import prediction
 import pymongo
 
 app = Flask(__name__)
@@ -58,6 +59,55 @@ def profile():
 def contact():
     return render_template('contact.html')
 
+@app.route("/get_price", methods=['POST'])
+def get_price():
+    try:
+        data = request.json
+        year = int(data.get('year', 0))
+        kmdriven = int(data.get('kmdriven', 0))
+        mileage = int(data.get('mileage', 0))
+        engine = int(data.get('engine', 0))
+        power = int(data.get('power', 0))
+        Seats = int(data.get('Seats', 0))
+        fuel_type = data.get('fuel_type', '')
+        Transmission = data.get('Transmission', '')
+        Ownertype = data.get('Ownertype', '')
+        car_name = data.get('car_name', '')
+
+        def fuel(fuel_type):
+            if fuel_type == 'Diesel':
+                return 1
+            elif fuel_type == 'Petrol':
+                return 2
+            elif fuel_type == 'CNG':
+                return 3
+            elif fuel_type == 'LPG':
+                return 4
+            else:
+                return 5
+
+        def Trans(Transmission):
+            if Transmission == 'Manual':
+                return 1
+            else:
+                return 2
+
+        def owner(Ownertype):
+            if Ownertype == 'First':
+                return 1
+            elif Ownertype == 'Second':
+                return 2
+            elif Ownertype == 'Third':
+                return 3
+            else:
+                return 4
+
+        res = prediction(year, kmdriven, mileage, engine, power, Seats, fuel(fuel_type), Trans(Transmission), owner(Ownertype), car_name)
+        res = round(res, 2)
+        return f"Rs. {res} Lakh"
+    except Exception as e:
+        return f"An error occurred: {e}"
+    
 if __name__ == "__main__":
     app.run(debug=True)
 
