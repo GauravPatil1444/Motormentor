@@ -25,9 +25,11 @@ let validate = () => {
     }
 
     if (status == 0) {
+      console.log(200);
       document.form.action = "/submit_data";
     }
     else{
-        document.getElementById('create_form').method = "get";
+      document.getElementById('create_form').method = "get";
+      console.log("Data not submitted");
     }
 }

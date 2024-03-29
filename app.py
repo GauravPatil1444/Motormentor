@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import pymongo
 
 app = Flask(__name__)
@@ -19,17 +19,22 @@ def auth():
     email = request.form.get('email')
     password = request.form.get('password')
     user_data = collection.find_one({"email":email},{'_id':0})
-    if(user_data["password"]==password):
-        return render_template('index.html')
+    if(user_data and user_data["password"]==password):
+        data  = {'status':1,'email':email}
+        return jsonify(data)
     else:
-        return ({"data":"not found"})
+        data = {"status":0}
+        return jsonify(data)
 
 @app.route('/submit_data',methods=['POST'])
 def submit():
+    print(200)  
+    # name = request.form.get('name')
     email = request.form.get('email')
     password = request.form.get('password')
     phone = request.form.get('phone')
     form_data = {
+        # "name":name,
         "email":email,
         "password":password,
         "phone":phone
