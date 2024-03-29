@@ -105,6 +105,7 @@ img{
 }
 
 input {
+  color: var(--awhite);
   text-align: center;
   font-size: large;
   width: 45%;
