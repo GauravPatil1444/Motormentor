@@ -21,7 +21,11 @@ def auth():
     password = request.form.get('password')
     user_data = collection.find_one({"email":email},{'_id':0})
     if(user_data and user_data["password"]==password):
-        data  = {'status':1,'email':email,'name':user_data["name"]}
+        list = []
+        for i in range(len(user_data['history'])):
+            list.append(user_data['history'][i]['action'])
+        list = ','.join(list)
+        data  = {'status':1,'email':email,'name':user_data["name"],'history': list}
         return jsonify(data)
     else:
         data = {"status":0}
@@ -59,10 +63,22 @@ def profile():
 def contact():
     return render_template('contact.html')
 
+@app.route('/history', methods=['POST'])
+def history():
+    data = request.json
+    history_entry = {
+        "action": data['data']  
+    }
+    collection.update_one(
+        {"email": data['email']},
+        {"$push": {"history": history_entry}}
+    )
+    return "200"
+
 @app.route("/get_price", methods=['POST'])
 def get_price():
     try:
-        data = request.json
+        data = request.json 
         year = int(data.get('year', 0))
         kmdriven = int(data.get('kmdriven', 0))
         mileage = int(data.get('mileage', 0))

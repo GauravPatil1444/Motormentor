@@ -19,10 +19,12 @@ let validate = () => {
       xhr.open('POST','/authenticate',true);
       xhr.onload = function(){
         let data = JSON.parse(xhr.responseText);
+        console.log(data)
         if(data['status']==1){
           sessionStorage.setItem('email',data['email']);
           sessionStorage.setItem('status',data['status']);
           sessionStorage.setItem('name',data['name']);
+          sessionStorage.setItem('history',data['history']);
           window.location.href = "/";
         }
         else{
