@@ -1,8 +1,7 @@
-from flask import Flask, render_template, request
-from model.model import prediction
+from flask import Flask, render_template, request, jsonify
 from model.scrape import scrape as scrape_car_data 
+from model.model import prediction
 import pymongo
-# import json
 
 app = Flask(__name__)
 
@@ -22,17 +21,25 @@ def auth():
     email = request.form.get('email')
     password = request.form.get('password')
     user_data = collection.find_one({"email":email},{'_id':0})
-    if(user_data["password"]==password):
-        return render_template('index.html')
+    if(user_data and user_data["password"]==password):
+        list = []
+        for i in range(len(user_data['history'])):
+            list.append(user_data['history'][i]['action'])
+        list = ','.join(list)
+        data  = {'status':1,'email':email,'name':user_data["name"],'history': list}
+        return jsonify(data)
     else:
-        return ({"data":"not found"})
+        data = {"status":0}
+        return jsonify(data)
 
 @app.route('/submit_data',methods=['POST'])
-def submit():
+def submit(): 
+    name = request.form.get('name')
     email = request.form.get('email')
     password = request.form.get('password')
     phone = request.form.get('phone')
     form_data = {
+        "name":name,
         "email":email,
         "password":password,
         "phone":phone
@@ -57,10 +64,22 @@ def profile():
 def contact():
     return render_template('contact.html')
 
+@app.route('/history', methods=['POST'])
+def history():
+    data = request.json
+    history_entry = {
+        "action": data['data']  
+    }
+    collection.update_one(
+        {"email": data['email']},
+        {"$push": {"history": history_entry}}
+    )
+    return "200"
+
 @app.route("/get_price", methods=['POST'])
 def get_price():
     try:
-        data = request.json
+        data = request.json 
         year = int(data.get('year', 0))
         kmdriven = int(data.get('kmdriven', 0))
         mileage = int(data.get('mileage', 0))
@@ -105,11 +124,13 @@ def get_price():
         return f"Rs. {res} Lakh"
     except Exception as e:
         return f"An error occurred: {e}"
-    
+
 @app.route('/scrape',methods=['POST'])
 def scrape_data():
     data = request.json
     return scrape_car_data(data)
-
+    
 if __name__ == "__main__":
     app.run(debug=True)
+
+    
