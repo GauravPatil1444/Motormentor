@@ -24,7 +24,7 @@ body {
 }
 .nav-components{
   margin: 10px;
-  width: 55px;
+  width: 60px;
   padding: 8px;
   height: fit-content;
   text-align: center;
@@ -48,19 +48,6 @@ body {
   text-align: center;
   border: 2px solid var(--red);
   border-radius: 20px;
-}
-#homebtn{
-  background-color: transparent;
-  border: 2px solid var(--red);
-}
-#homebtn a{
-  color: var(--awhite);
-}
-#homebtn:hover{
-  background-color: var(--red);
-}
-#homebtn:hover a{
-  color: var(--dblue);
 }
 .Logo{
   position: absolute;

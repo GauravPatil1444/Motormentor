@@ -8,6 +8,9 @@
         display: flex;
         justify-content: space-around;
     }
+    .nav-components{
+        width: 60px !important;
+    }
     .Logo{
         display: none;
     }
@@ -17,6 +20,9 @@
         font-size: xx-large;
         display: flex;
         justify-content: center;
+    }
+    .heading div img{
+        width: 55vw;        
     }
     .heading div{
         animation: slide 8s infinite;
@@ -44,4 +50,9 @@
         width: 95% !important;
         height: auto;
     }
+    #contactbtn {
+        width: fit-content !important;
+    }
 }
+    
+

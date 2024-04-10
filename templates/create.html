@@ -3,11 +3,11 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../static/media queries/create_mobile.css">
-  <link rel="stylesheet" href="../static/create.css">
+  <link rel="stylesheet" href="/static/create.css">
+  <link rel="stylesheet" href="/static/media queries/create_mobile.css">
+  <script src="../static/js/create.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
@@ -16,16 +16,32 @@
 
 <body>
   <div id="navbar">
-    <div class="profile"><button onclick="profileclk()"><img src="../static/img/profile-user.png" alt="couldn't load" height="40"></button></div>
-    <div class="nav-components" id="contactbtn"><a class="anchors" href="/contact">Contact us</a></div>
-    <div class="nav-components" id="sell_carbtn"><a href="/sell_car">Sell car</a></div>
-    <div class="nav-components" id="homebtn"><a class="anchors" href="/">Home</a></div>
-    <div class="Logo"><img src="../static/img/Motormentor.png" alt="Logo couldn't loaded" height="35" ></div>
-</div>
-  <img class="Motormentor_img" src="../static/img/Motormentor.png" width="450" alt="couldn't load">
+    <div class="profile">
+        <button onclick="profileclk()">
+            <img src="../static/img/profile-user.png" alt="couldn't load" height="40" />
+        </button>
+    </div>
+    <div class="nav-components" id="contactbtn">
+        <a class="anchors" href="/contact">Contact us</a>
+    </div>
+    <div class="nav-components" id="sell_carbtn">
+        <a href="/sell_car">Sell car</a>
+    </div>
+    <div class="nav-components" id="homebtn">
+        <a class="anchors" href="/">Home</a>
+    </div>
+    <div class="Logo">
+        <img src="../static/img/Motormentor.png" alt="Logo couldn't loaded" height="35" />
+    </div>
+  </div>
+  <img src="/static/img/Motormentor.png" width="450" alt="">
   <div class="container">
     <h1 class="label">Create account</h1>
-    <form action="/submit_data" class="login_form" method="post" name="form">
+    <form action="/submit_data" id="create_form" method="post" name="form">
+      
+      <div class="d">
+        <input type="text" class="inp" id="name" name="name" placeholder="Enter name" required>
+      </div>
 
       <div class="d">
         <input type="email" class="inp" id="email" name="email" placeholder="Enter email" required>
@@ -44,7 +60,7 @@
       </div>
 
       <div class="d">
-        <button type="submit">Create account</button>
+        <button type="submit" onclick="validate()">Create account</button>
       </div>
 
       <div class="d">

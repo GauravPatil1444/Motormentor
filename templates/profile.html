@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../static/profile.css">
-    <link rel="stylesheet" href="../static/media queries/profile_mobile.css">
+    <link rel="stylesheet" href="/static/media queries/profile_mobile.css">
     <script src="../static/js/profile.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,17 +13,18 @@
 </head>
 <body>
     <div id="navbar">
-        <div class="profile"><button onclick="profileclk()"><img src="../static/img/profile-user.png" alt="couldn't load" height="40"></button></div>
+        <div class="profile"><button onclick="profileclk()"><img src="/static/img/profile-user.png" alt="couldn't load" height="40"></button></div>
         <div class="nav-components" id="contactbtn"><a class="anchors" href="/contact">Contact us</a></div>
         <div class="nav-components" id="sell_carbtn"><a href="/sell_car">Sell car</a></div>
         <div class="nav-components" id="homebtn"><a class="anchors" href="/">Home</a></div>
-        <div class="Logo"><img src="../static/img/Motormentor.png" alt="Logo couldn't loaded" height="35" ></div>
+        <div class="Logo"><img src="/static/img/Motormentor.png" alt="Logo couldn't loaded" height="35" ></div>
     </div>
     <div id="container">
         <div id="name">User name : <span id="user_name"></span></div>
+        <div id="email">Email : <span id="user_email"></span></div>
         <div id="status">Status : <span id="user_status"></span></div>
         <div id="history">History : <span id="no_history"></span><div id="user_history"></div></div>
-        <button onclick="login()">Login</button>
+        <button id="loginbtn" onclick="login()">Login</button>
     </div>
 </body>
 </html>

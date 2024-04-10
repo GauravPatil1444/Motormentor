@@ -21,6 +21,9 @@
     }
     #navbar div{
         font-size: x-small;
-        margin-right: 1.2%;
+        margin-right: 0.2%;
+    }
+    #contactbtn {
+        width: fit-content !important;
     }
 }

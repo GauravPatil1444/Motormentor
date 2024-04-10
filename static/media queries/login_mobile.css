@@ -7,10 +7,6 @@
         margin-top: 20%;
         width: 80vw;
     }
-    .container{
-        width: 80vw !important;
-        height: fit-content;
-    }
     button{
         width: 30vw;
         padding: 5px;
@@ -48,6 +44,10 @@
     #navbar div{
         font-size: x-small;
         margin-right: 1.2%;
+    }
+    .container{
+        width: 80vw !important;
+        height: fit-content;
     }
  }
  

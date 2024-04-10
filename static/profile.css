@@ -27,7 +27,7 @@ body{
 }
 .nav-components{
     margin: 10px;
-    width: 55px;
+    width: 60px;
     padding: 8px;
     height: fit-content;
     text-align: center;
@@ -88,7 +88,7 @@ body{
 }
 #container div{
     margin-bottom: 2%;
-    font-size: larger;
+    font-size: large;
 }
 button {
     width: 30%;
