@@ -28,6 +28,16 @@ def scrape(data):
 
             data = {'carname':str(carname),'img':img['src'],'specs':str(specs),'price':str(price),'features':str(features),'mileage':str(mileage),'verdict':str(verdict),'variants':str(variants),'summary':str(summary)}    
             return json.dumps(data)
+        elif len(data)==4:
+            url = f'https://www.cardekho.com/compare/{data[0]}-{data[1]}-and-{data[2]}-{data[3]}.htm'
+            req = urllib.request.Request(url, headers={'User-Agent': 'Chrome/80.0.3987.149'})
+            page = urllib.request.urlopen(req)
+            html = page.read().decode("utf-8")
+            soup = BeautifulSoup(html, "html.parser")
+
+            table = soup.find_all(class_='differencesPanel')
+            data = {'table':str(table)}
+            return json.dumps(data)
         else:
             return json.dumps({'error': 'Invalid data format'})
     except Exception as e:

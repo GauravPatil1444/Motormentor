@@ -60,10 +60,6 @@ def sell():
 def profile():
     return render_template('profile.html')
 
-@app.route('/contact')    
-def contact():
-    return render_template('contact.html')
-
 @app.route('/history', methods=['POST'])
 def history():
     data = request.json
