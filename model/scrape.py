@@ -28,16 +28,29 @@ def scrape(data):
 
             data = {'carname':str(carname),'img':img['src'],'specs':str(specs),'price':str(price),'features':str(features),'mileage':str(mileage),'verdict':str(verdict),'variants':str(variants),'summary':str(summary)}    
             return json.dumps(data)
-        elif len(data)==4:
-            url = f'https://www.cardekho.com/compare/{data[0]}-{data[1]}-and-{data[2]}-{data[3]}.htm'
-            req = urllib.request.Request(url, headers={'User-Agent': 'Chrome/80.0.3987.149'})
-            page = urllib.request.urlopen(req)
-            html = page.read().decode("utf-8")
-            soup = BeautifulSoup(html, "html.parser")
+        # elif len(data)==4:
+        #     def scraper(data,d1,d2):
+        #         url = f'https://www.carwale.com/{data[d1]}-cars/{data[d2]}/'
+        #         req = urllib.request.Request(url, headers={'User-Agent': 'Chrome/80.0.3987.149'})
+        #         page = urllib.request.urlopen(req)
+        #         html = page.read().decode("utf-8")
+        #         soup = BeautifulSoup(html, "html.parser")
 
-            table = soup.find_all(class_='differencesPanel')
-            data = {'table':str(table)}
-            return json.dumps(data)
+        #         carname = soup.find(class_='o-dOKno o-bNCMFw o-eqqVmt')
+        #         img = soup.find(class_='o-bXKmQE o-cgkaRG o-cQfblS o-bNxxEB o-pGqQl o-wBtSi o-bwUciP o-btTZkL o-bfyaNx o-eAZqQI')
+        #         verdict = soup.find(class_='o-bkmzIL o-cyHybq o-fyWCgU')
+        #         price = soup.find(class_='o-Hyyko o-bPYcRG o-eqqVmt')
+        #         variants = soup.find(class_='o-dJmcbh o-fzoHBq o-fzoHMc o-fznVqX o-fznVsN')
+        #         specs = soup.find(class_='o-bfyaNx o-dJmcbh o-dKUdmM o-cpnuEd')
+        #         features = soup.find(class_='o-bkmzIL o-fyWCgU o-cpNAVm o-fBkfen o-fznVqX')
+        #         mileage = soup.find(class_='o-bCRRBE o-bfyaNx o-bTcQuC W3A1MZ undefined o-YCHtV')
+        #         summary = soup.find(class_='o-bfyaNx o-bNxxEB o-bqHweY')
+
+        #         data = {'carname':str(carname),'img':img['src'],'specs':str(specs),'price':str(price),'features':str(features),'mileage':str(mileage),'verdict':str(verdict),'variants':str(variants),'summary':str(summary)}    
+        #         return json.dumps(data)
+        #     data1 = scraper(data,0,1)
+        #     data2 = scraper(data,2,3)                                                                                
+        #     return json.dumps([data1, data2])
         else:
             return json.dumps({'error': 'Invalid data format'})
     except Exception as e:
