@@ -11,7 +11,7 @@ collection = db['user_data']
 
 @app.route('/')
 def root():
-    return render_template('index.html')
+    return render_template('index.html')        
 @app.route('/login')
 def login():
     return render_template('login.html')
